@@ -7,3 +7,5 @@
 当前仅适配包含 native-conversation 通用接口的 Clowder Bot 验证分支。上游 Clowder AI 可以安装工具，但尚不会显示原生目录。首次绑定后模板和目录固定；升级插件的 package revision 需要后续显式迁移接口，本验证不会自动扩大原授权。停用插件后历史聊天仍可读，新执行被拒绝。
 
 开发：`pnpm --filter @zlzfun/clowder-native-colleagues build && pnpm --filter @zlzfun/clowder-native-colleagues test`。打包：在本目录执行 `npm pack --pack-destination /tmp`，然后使用 Console 设置中的本地插件包安装入口。发布包内含自包含的 MCP 产物，不需要宿主在启用时下载运行依赖。
+
+验证记录（2026-10-18）：已在隔离 Console 中用两位同事完成真实文件生成与独立核验；正常重启 API 后，身份、历史、工作目录和各自的 Codex 会话均恢复，并成功继续对话。实际界面仍沿用宿主的 CLI Output 折叠卡片；强制杀掉整个进程组与执行中恢复不在这次验收结论内。见 [宿主验收与实际产物](https://github.com/zlzfun/clowder-bot/blob/feat/native-colleague/docs/plans/clowder-bot-native-colleague-validation.md)。

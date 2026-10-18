@@ -1,0 +1,24 @@
+pluginId: dev.clowder.native-colleagues
+version: 0.1.0-alpha.2
+contractVersion: 0.1.0
+name: 同事
+description:
+  default: Persistent colleagues using native Console chat and existing local Agents.
+  translations:
+    zh-CN: 在原生聊天中与松果、青禾协作，复用本地 Agent 和已有工作目录。
+contributions:
+  - type: mcp
+    id: native-conversation-directory
+    runtime:
+      transport: stdio
+      entrypoint: dist/mcp-entrypoint.mjs
+features:
+  - id: native-colleagues
+    name: 同事工作台
+    resources: []
+    contributions:
+      - type: mcp
+        id: native-conversation-directory
+    capabilities: []
+runtime:
+  transport: builtin

@@ -1,0 +1,18 @@
+{
+  "name": "@zlzfun/clowder-native-colleagues",
+  "version": "0.1.0-alpha.2",
+  "description": "Two persistent colleagues in the native Clowder Console chat",
+  "license": "MIT",
+  "type": "module",
+  "files": ["dist", "plugin.yaml", "README.md"],
+  "engines": { "node": ">=20.0.0" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "node scripts/build.mjs",
+    "typecheck": "node --check src/descriptor.mjs && node --check src/mcp-entrypoint.mjs",
+    "lint": "node --check src/mcp-entrypoint.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": { "@modelcontextprotocol/sdk": "1.26.0", "zod": "4.4.3", "esbuild": "0.28.1" },
+  "repository": { "type": "git", "url": "https://github.com/zlzfun/clowder-ai-plugins.git", "directory": "packages/native-colleagues" }
+}
